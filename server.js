@@ -6,10 +6,10 @@ var app = express();
 app.use(express.static( __dirname + '/public/dist/public' ));
 app.use(bodyParser.json());
 
-require('./server/models/Task.js');
 
 mongoose.connect('mongodb://localhost/restful_task_182', {useNewUrlParser: true});
 
+require('./server/models/Task.js');
 require('./server/config/mongoose.js');
 
 var routes_setter = require('./server/config/routes.js');
